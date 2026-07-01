@@ -1,12 +1,21 @@
 import express from "express";
+import cors from "cors";
+import testRoutes from "./routes/testRoutes";
 
 const app = express();
-const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello from Backend!");
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Temporary route
+app.get("/api/health", (req, res) => {
+    res.json({
+        status: "ok",
+        message: "Backend is running"
+    });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+app.use("/test", testRoutes)
+
+export default app;
