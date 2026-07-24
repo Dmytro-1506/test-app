@@ -1,10 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 
-import './App.css'
+
+import JobTitlesPage from './pages/JobTitlesPage/JobTitlesPage';
+import './App.css';
 
 function App() {
 
   return (
-    <h1>Welcome to Test App</h1>
+    <Routes>
+        <Route path="/jobs" element={<JobTitlesPage/>} />
+    </Routes>
+
   )
 }
 

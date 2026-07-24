@@ -43,9 +43,9 @@ export function getUser(req: Request, res: Response) {
     const age = req.query.age;
     const id = req.params.id;
 
-    res.json(req.query
-    //    {name: name,
-    //    age: age,
-    //    id: id}
-    )
+    res.json({
+        name: name,
+        age: age,
+        id: id,
+    })
 }
